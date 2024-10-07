@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for responsive design -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Title of the page -->
+        <title>Package Details Form</title>
+    
+        <!-- Bootstrap CSS link -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+        <style>
+            /* Optional custom styling */
+            .header-img {
+                max-width: 200px;
+                height: auto;
+            }
+            .main-title {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <img src="/pdma-logo.png" alt="PDM Logo" style="width: 200px; height: 200px;">
+    <a href="/"><h1>Homepage</h1></a>
+    <h1>Package Details Form</h1>
+    <form action="/33119937/raymond/packages" method="post">
+        <label for="package-title">Package Title:</label>
+        <input type="text" name="packageTitle" required><br><br>
+
+        <label for="package-weight">Package Weight (kg):</label>
+        <input type="number" name="packageWeight" step="0.01" required><br><br>
+
+        <label for="package-destination">Package Destination:</label>
+        <input type="text" name="packageDestination" required><br><br>
+
+        <label for="package-description">Package Description:</label>
+        <textarea name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="package-allocated">Package is Allocated:</label>
+        <input type="checkbox" name="isAllocated"><br><br>
+
+        <label for="driver-id">Driver ID:</label>
+        <select name="driverID">
+            <% for(i=0; i<drivers.length; i++) { %>
+                <option value="<%= drivers[i].driverID %>"><%= drivers[i].driverID %></option>
+            <% } %>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<footer>
+    <p>&copy; 2024 Package Delivery Management Application. All rights reserved.</p>
+</footer>
+</html>

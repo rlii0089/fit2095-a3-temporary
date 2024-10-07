@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the page -->
+    <title>Homepage</title>
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Optional custom styling */
+        .header-img {
+            max-width: 200px;
+            height: auto;
+        }
+        .main-title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the content -->
+    <div class="container">
+        <!-- Header with centered image -->
+        <header class="text-center my-4">
+            <img src="/pdma-logo.png" alt="PDM Logo" class="header-img">
+            <h1 class="main-title">Package Delivery Management Application</h1>
+            <p>Number of drivers in the database: <%= drivers.length %></p>
+            <p>Number of packages in the database: <%= packages.length %></p>
+        </header>
+
+        <!-- Table for links and descriptions -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Link</th>
+                    <th class="text-right">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/33119937/raymond/drivers/add" class="btn btn-link">Add Driver</a></td>
+                    <td class="text-right">Add a new driver</td>
+                </tr>
+                <tr>
+                    <td><a href="/33119937/raymond/packages/add" class="btn btn-link">Add Package</a></td>
+                    <td class="text-right">Add a new package</td>
+                </tr>
+                <tr>
+                    <td><a href="/33119937/raymond/drivers" class="btn btn-link">List Drivers</a></td>
+                    <td class="text-right">View all drivers</td>
+                </tr>
+                <tr>
+                    <td><a href="/33119937/raymond/packages" class="btn btn-link">List Packages</a></td>
+                    <td class="text-right">View all packages</td>
+                </tr>
+                <tr>
+                    <td><a href="/33119937/raymond/drivers/delete" class="btn btn-link">Delete Driver</a></td>
+                    <td class="text-right">Delete a driver</td>
+                </tr>
+                <tr>
+                    <td><a href="/33119937/raymond/packages/delete" class="btn btn-link">Delete Package</a></td>
+                    <td class="text-right">Delete a package</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center footer">
+        <p>&copy; 2024 Package Delivery Management Application. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "assignment-2",
+  "version": "1.0.0",
+  "description": "Raymond's FIT2095 Assignment 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.infotech.monash.edu/fit2102/fit2102-s2-2024/assignment-2/rlii0089"
+  },
+  "author": "Raymond Li",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2"
+  }
+}

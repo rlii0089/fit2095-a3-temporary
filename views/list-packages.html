@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for responsive design -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Title of the page -->
+        <title>Package Details Table</title>
+    
+        <!-- Bootstrap CSS link -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+        <style>
+            /* Optional custom styling */
+            .header-img {
+                max-width: 200px;
+                height: auto;
+            }
+            .main-title {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <img src="/pdma-logo.png" alt="PDM Logo" style="width: 200px; height: 200px;">
+    <a href="/"><h1>Homepage</h1></a>
+    <h1>Package Details</h1>
+    <table>
+        <tr>
+            <th>Package ID</th>
+            <th>Package Title</th>
+            <th>Package Weight</th>
+            <th>Package Destination</th>
+            <th>Package Description</th>
+            <th>Package Created At</th>
+            <th>Package Allocated</th>
+            <th>Package Driver ID</th>
+        </tr>
+        <% for(i=0; i<packages.length; i++) { %>
+            <tr>
+                <td><%= packages[i].packageID %></td>
+                <td><%= packages[i].packageTitle %></td>
+                <td><%= packages[i].packageWeight %></td>
+                <td><%= packages[i].packageDestination %></td>
+                <td><%= packages[i].description %></td>
+                <td><%= packages[i].createdAt %></td>
+                <td><%= packages[i].isAllocated %></td>
+                <td><%= packages[i].driverID %></td>
+                <td>
+                    <form action="/33119937/raymond/packages/delete" method="POST">
+                        <input type="hidden" name="packageID" value="<%= packages[i].packageID %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+<footer>
+    <p>&copy; 2024 Package Delivery Management Application. All rights reserved.</p>
+</footer>
+</html>
