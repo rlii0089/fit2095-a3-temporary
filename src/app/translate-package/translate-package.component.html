@@ -1,0 +1,27 @@
+<h2>Translate Package Descriptions</h2>
+
+<label for="language">Select Target Language:</label>
+<select [(ngModel)]="selectedLanguage" id="language">
+  <option value="en">English</option>
+  <option value="es">Spanish</option>
+  <option value="fr">French</option>
+</select>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let package of packages">
+      <td>{{ package.packageTitle }}</td>
+      <td>{{ package.packageDescription }}</td>
+      <td>
+        <button (click)="translateDescription(package._id)">Translate</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

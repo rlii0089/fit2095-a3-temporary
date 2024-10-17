@@ -1,0 +1,78 @@
+<div class="container mt-6">
+    <div class="card">
+        <div class="card-body">
+
+            <h1 class="text-center">Driver List</h1>
+
+            @if(drivers.length===0){
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Licence</th>
+                        <th>Active</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+            <tr>
+                <td colspan="7">No drivers found in the database.</td>
+            </tr>
+
+            }@else{
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Licence</th>
+                        <th>Active</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                @for(driver of drivers;track $index){
+                <tr>
+                    <td>{{driver.driverID}}</td>
+                    <td>{{driver.driverName | uppercase}}</td>
+                    <td>{{driver.driverDepartment}}</td>
+                    <td>{{driver.driverLicence}}</td>
+                    <td>{{driver.driverIsActive}}</td>
+                    <td>{{driver.driverCreatedAt}}</td>
+                    <td><button (click)="showPackages(driver.driverID)" class="btn btn-primary">Show Packages</button>
+                    </td>
+                </tr>
+                }
+
+            </table>
+            }
+
+        </div>
+        <div class="card-footer text-center">Number of drivers in the database: {{drivers.length}}</div>
+    </div>
+</div>
+
+<!--
+@if (selectedDriverPackages !== null) {
+<div>
+    <h3>Packages for Selected Driver</h3>
+
+    @if (selectedDriverPackages.length > 0) {
+    <table class="table">
+        <tr *ngFor="let package of selectedDriverPackages">
+            <td>{{ package.id }}</td>
+            <td>{{ package.description }}</td>
+        </tr>
+    </table>
+    } else {
+        <p>No Packages Found</p>
+    }
+</div>
+}
+-->

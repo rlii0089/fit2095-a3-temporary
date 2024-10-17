@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <h1 class="text-center">Add Package</h1>
+
+            <div class="card">
+                <div class="card-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" placeholder="Package title must be 3-15 alphanumeric characters" name="title"
+                                [(ngModel)]="package.packageTitle">
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="weight">Weight (KG)</label>
+                            <input type="number" class="form-control" placeholder="Package weight must be a number greater than 0" name="weight"
+                                [(ngModel)]="package.packageWeight">
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="destination">Destination</label>
+                            <input type="text" class="form-control" placeholder="Package destination must be 5-15 alphanumeric characters" name="destination"
+                                [(ngModel)]="package.packageDestination">
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="description">Description</label>
+                            <input class="text" class="form-control" placeholder="Description must be a string with length between 0 and 30 inclusive" name="description" [(ngModel)]="package.packageDescription">
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="allocated">Allocated</label>
+                            <select class="form-control" name="allocated" [(ngModel)]="package.packageIsAllocated" (ngModelChange)="isAllocated()">
+                                <option [ngValue]="false">No</option>
+                                <option [ngValue]="true">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="driver">Driver</label>
+                            <select class="form-control" name="driver" [(ngModel)]="package.driverID" [disabled]="!isAllocated()">
+                                @for(driver of drivers;track $index) {
+                                <option value="{{driver.driverID}}">{{driver.driverID}}</option>
+                                }
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" (click)="addPackage()">ADD</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

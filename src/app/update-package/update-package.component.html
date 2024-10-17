@@ -1,0 +1,26 @@
+<div class="container mt-6">
+    <div class="card">
+        <div class="card-body">
+
+            <h1 class="text-center">Update Package</h1>
+
+            <form>
+                <div class="form-group my-3">
+                    <label for="id">ID:</label>
+                    <select class="form-control" name="packageID" [(ngModel)]="selectedPackage.packageID">
+                        @for(package of packages;track $index) {
+                        <option value="{{package.packageID}}">{{package.packageID}}</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group my-3">
+                    <label for="destination">Destination:</label>
+                    <input type="text" class="form-control" placeholder="Enter Destination" name="package.destination"
+                        [(ngModel)]="selectedPackage.packageDestination">
+                </div>
+
+                <button class="btn btn-primary" (click)="updatePackage()">UPDATE</button>
+            </form>
+        </div>
+    </div>

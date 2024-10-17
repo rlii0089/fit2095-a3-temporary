@@ -1,0 +1,39 @@
+<div class="container mt-6">
+    <div class="card">
+      <div class="card-body">
+
+        <h1 class="text-center">Add Driver</h1>
+  
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" placeholder="Driver name must be 3-20 alphabetic characters" name="driverName" [(ngModel)]="driver.driverName">
+          </div>
+
+          <div class="form-group my-3">
+            <label for="department">Department:</label>
+            <select class="form-control" name="department" [(ngModel)]="driver.driverDepartment">
+                <option value="food">Food</option>
+                <option value="furniture">Furniture</option>
+                <option value="electronic">Electronic</option>
+            </select>
+          </div>
+
+          <div class="form-group my-3">
+            <label for="licence">Licence:</label>
+            <input type="text" class="form-control" placeholder="Driver licence must be 5 alphanumeric characters" name="driver.driverLicence" [(ngModel)]="driver.driverLicence">
+          </div>
+
+          <div class="form-group my-3">
+            <label for="active">Active:</label>
+            <select class="form-control" name="IsActive" [(ngModel)]="driver.driverIsActive">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" (click)="addDriver()">ADD</button>
+        </form>
+      </div>
+    </div>
+  
